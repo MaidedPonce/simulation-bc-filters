@@ -1,0 +1,21 @@
+.type {
+    display: flex;
+    height: 48px;
+    width: 126px;
+    border: 1px solid #1572A1;
+    border-radius: 32px;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.figure {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+}
+
+.img {
+    height: inherit;
+    width: inherit;
+}

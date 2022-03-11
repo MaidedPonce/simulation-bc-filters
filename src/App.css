@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.containerCards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerUsers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
