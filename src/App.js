@@ -13,6 +13,20 @@ function App() {
     checkedSixx: false
   })
 
+  const [show, setShow] = useState({
+    showOne: false,
+    showTwo: false,
+    showThree: false,
+  })
+
+
+  const handleSetShow = (state, value) => { 
+    setShow({
+      ...checked, 
+      [state]: value,
+    })
+  }
+
   const handleSetChecked = (state, value) => { 
     setChecked({
       ...checked, 
@@ -60,9 +74,9 @@ function App() {
     <div className="App">
       <h1>holi</h1> 
       <div className="containerCards">
-        <CardContainer setChecked={setChecked} checked={checked} handleChexboxOne={(e) => handleSetChecked("checkedOne", e.target.checked)} handleChexboxTwo={(e) => handleSetChecked("checkedTwo", e.target.checked)} type={"Tipo"} titleOne="Anfitrión" titleTwo="Huésped" descriptionOne="Descripcion para anfitrion" descriptionTwo="Descripcion para huesped" />
-        <CardContainer setChecked={setChecked} checked={checked} handleChexboxOne={(e) => handleSetChecked("checkedThree", e.target.checked)} handleChexboxTwo={(e) => handleSetChecked("checkedFour", e.target.checked)} type={"Estado"} titleOne="Activo" titleTwo="Inactivo" descriptionOne="Descripcion para activo" descriptionTwo="Descripcion para inactivo" />
-        <CardContainer setChecked={setChecked} checked={checked} handleChexboxOne={(e) => handleSetChecked("checkedFive", e.target.checked)} handleChexboxTwo={(e) => handleSetChecked("checkedSixx", e.target.checked)} type={"Validación"} titleOne="Sí" titleTwo="No" descriptionOne="Descripcion para sí" descriptionTwo="Descripcion para no" />
+        <CardContainer show={show.showOne} handleSetShow={() => handleSetShow("showOne", !show.showOne)} setChecked={setChecked} checked={checked} handleChexboxOne={(e) => handleSetChecked("checkedOne", e.target.checked)} handleChexboxTwo={(e) => handleSetChecked("checkedTwo", e.target.checked)} type={"Tipo"} titleOne="Anfitrión" titleTwo="Huésped" descriptionOne="Descripcion para anfitrion" descriptionTwo="Descripcion para huesped" />
+        <CardContainer show={show.showTwo} handleSetShow={() => handleSetShow("showTwo", !show.showTwo)} setChecked={setChecked} checked={checked} handleChexboxOne={(e) => handleSetChecked("checkedThree", e.target.checked)} handleChexboxTwo={(e) => handleSetChecked("checkedFour", e.target.checked)} type={"Estado"} titleOne="Activo" titleTwo="Inactivo" descriptionOne="Descripcion para activo" descriptionTwo="Descripcion para inactivo" />
+        <CardContainer show={show.showThree} handleSetShow={() => handleSetShow("showThree", !show.showThree)} checked={checked} setChecked={setChecked}  handleChexboxOne={(e) => handleSetChecked("checkedFive", e.target.checked)} handleChexboxTwo={(e) => handleSetChecked("checkedSixx", e.target.checked)} type={"Validación"} titleOne="Sí" titleTwo="No" descriptionOne="Descripcion para sí" descriptionTwo="Descripcion para no" />
       </div>
       <div className="containerUsers">
         { 
