@@ -3,9 +3,7 @@ import image from "../../styles/arrow.png"
 import Card from '../card/Card'
 import "./cardContainer.css"
 
-const CardContainer = ({ type, show, handleSetShow, handleChexboxOne, handleChexboxTwo, titleOne, titleTwo, descriptionOne, descriptionTwo }) => {
-
-  // const [show, setShow] = useState(false)
+const CardContainer = ({ type, titleOne, titleTwo, descriptionOne, descriptionTwo,  show, checkedOne, checkedTwo, handleSetShow, handleChexboxOne, handleChexboxTwo, handleChexboxOneDelete, }) => {
 
   return (
     <>
@@ -16,7 +14,7 @@ const CardContainer = ({ type, show, handleSetShow, handleChexboxOne, handleChex
       </figure>
     </div>
       {
-       show === true && <Card handleChexboxOne={handleChexboxOne} handleChexboxTwo={handleChexboxTwo} titleOne={titleOne} titleTwo={titleTwo} descriptionOne={descriptionOne} descriptionTwo={descriptionTwo} />
+       show === true && <Card checkedOne={checkedOne} checkedTwo={checkedTwo} handleChexboxOne={handleChexboxOne} handleChexboxTwo={handleChexboxTwo} handleChexboxOneDelete={handleChexboxOneDelete} titleOne={titleOne} titleTwo={titleTwo} descriptionOne={descriptionOne} descriptionTwo={descriptionTwo} />
       }
       
       </div>
