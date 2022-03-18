@@ -3,7 +3,7 @@ import image from "../../styles/arrow.png"
 import Card from '../card/Card'
 import "./cardContainer.css"
 
-const CardContainer = ({ type, titleOne, titleTwo, descriptionOne, descriptionTwo, checkedOne, checkedTwo, checkedThree, checkedFour, checkedFive, checkedSixx, setChecked, checked }) => {
+const CardContainer = ({ type, handleChexboxOne, handleChexboxTwo, titleOne, titleTwo, descriptionOne, descriptionTwo }) => {
 
   const [show, setShow] = useState(false)
 
@@ -25,7 +25,7 @@ const CardContainer = ({ type, titleOne, titleTwo, descriptionOne, descriptionTw
         show === true && type === "Validación" && (<Card setChecked={setChecked} handleChexboxOne={(e) => setChecked({...checked, checkedFive: e.target.checked})} handleChexboxTwo={(e) => setChecked({...checked, checkedSixx: e.target.checked})} checkedOne={checkedFive} checkedTwo={checkedSixx} titleOne="Sí" titleTwo="No" descriptionOne="Descripcion para sí" descriptionTwo="Descripcion para no" />)
       } */}
       {
-       show === true && <Card titleOne={titleOne} titleTwo={titleTwo} descriptionOne={descriptionOne} descriptionTwo={descriptionTwo} />
+       show === true && <Card handleChexboxOne={handleChexboxOne} handleChexboxTwo={handleChexboxTwo} titleOne={titleOne} titleTwo={titleTwo} descriptionOne={descriptionOne} descriptionTwo={descriptionTwo} />
       }
       
       </div>
